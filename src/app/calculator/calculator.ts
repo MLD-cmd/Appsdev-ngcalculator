@@ -35,16 +35,16 @@ export class Calculator implements OnInit {
     }
   }
 
-  private doCalculation(op: string, secondOperand: number): number {
+  private doCalculation(op: string, secondOperand: number){
     switch (op) {
       case '+':
-        return (this.firstOperand! += secondOperand);
+        return this.firstOperand! + secondOperand;
       case '-':
-        return (this.firstOperand! -= secondOperand);
+        return this.firstOperand! - secondOperand;
       case '*':
-        return (this.firstOperand! *= secondOperand);
+        return this.firstOperand! * secondOperand;
       case '/':
-        return (this.firstOperand! /= secondOperand);
+        return this.firstOperand! / secondOperand;
       case '=':
         return secondOperand;
       default:
@@ -52,9 +52,8 @@ export class Calculator implements OnInit {
     }
   }
 
-  public getOperation(op: string): void {
-    console.log(op);
-
+  public getOperation(op: string){
+   
     if (this.firstOperand === null) {
       this.firstOperand = Number(this.currentNumber);
     } else if (this.operator) {
